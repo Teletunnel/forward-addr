@@ -31,42 +31,7 @@ const samples = [ // TODO: finish matches, protocols
   ]
 ]
 
-let protocols = [
-  {
-    name: 'tcp',
-    properties: {
-      port: {
-        type: 'number',
-        matcher: 'strict'
-      }
-    },
-    childern: [
-      {
-        name: 'ssl',
-        properties: {
-          hostname: {
-            type: 'string',
-            matcher: 'glob'
-          }
-        }
-      },
-      {
-        name: 'http',
-        properties: {
-          path: {
-            type: 'string',
-            matcher: 'strict'
-          }
-        },
-        sub: {
-          ws: {
-            properties: {}
-          }
-        }
-      }
-    ]
-  }
-]
+let protocols = require('./protocols.stub')
 
 describe('parser', () => {
   samples.forEach((sample, i) => {
@@ -74,7 +39,7 @@ describe('parser', () => {
       assert.deepStrictEqual(parse(sample[0]), sample[1])
     })
 
-    it.skip('should validate sample #' + i + ' correctly', () => {
+    it('should validate sample #' + i + ' correctly', () => {
       assert.deepStrictEqual(validate(parse(sample[0]), protocols), sample[1])
     })
   })
