@@ -74,7 +74,7 @@ describe('parser', () => {
       assert.deepStrictEqual(parse(sample[0]), sample[1])
     })
 
-    it('should validate sample #' + i + ' correctly', () => {
+    it.skip('should validate sample #' + i + ' correctly', () => {
       assert.deepStrictEqual(validate(parse(sample[0]), protocols), sample[1])
     })
   })
