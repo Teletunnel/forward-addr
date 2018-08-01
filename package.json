@@ -1,0 +1,28 @@
+{
+  "name": "forward-addr",
+  "version": "0.0.1",
+  "description": "A multiaddr-inspired address format for recursivly matching protocols and properties",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "aegir lint",
+    "test": "aegir test",
+    "release": "aegir release",
+    "release-minor": "aegir release --type minor",
+    "release-major": "aegir release --type major",
+    "coverage": "aegir coverage",
+    "coverage-publish": "aegir coverage -u"
+  },
+  "keywords": [
+    "forward-addr",
+    "match",
+    "forward",
+    "relay",
+    "protocol",
+    "multiaddr"
+  ],
+  "author": "Maciej Krüger <mkg20001@gmail.com>",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "aegir": "^15.1.0"
+  }
+}
