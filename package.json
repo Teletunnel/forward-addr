@@ -36,5 +36,8 @@
   "bugs": {
     "url": "https://github.com/PeerTunnel/forward-addr/issues"
   },
-  "homepage": "https://github.com/PeerTunnel/forward-addr#readme"
+  "homepage": "https://github.com/PeerTunnel/forward-addr#readme",
+  "contributors": [
+    "Maciej Krüger <mkg20001@gmail.com>"
+  ]
 }
