@@ -124,17 +124,17 @@ function tokenizer (input) {
         next()
 
         let parseValue = true
-        let inQuotes = false
-        if (cur() === '"') {
-          inQuotes = true
+        let endChar = '/'
+        if (cur() === '"' || cur() === "'") {
+          endChar = cur()
           next()
         }
 
         while (parseValue) {
-          if (cur() === '\\' && input[current + 1] === (inQuotes ? '"' : '/')) {
-            // do nothing...
+          if (cur() === '\\' && input[current + 1] === endChar) {
             next()
-          } else if (cur() === (inQuotes ? '"' : '/')) {
+            value += cur() // append non-escaped version
+          } else if (cur() === endChar) {
             parseValue = false
           } else {
             value += cur()
