@@ -2,7 +2,7 @@
 
 /* eslint-env mocha */
 
-const parser = require('..').parse
+const {parse, validate} = require('..')
 const assert = require('assert')
 
 const samples = [ // TODO: finish matches, protocols
@@ -17,14 +17,65 @@ const samples = [ // TODO: finish matches, protocols
         sub: {
           protocol: 'ws', conditions: {}, action: 'stream'
         }}
+    ],
+    [
+      {protocol: 'tcp', conditions: {port: {compare: 'strict', value: 5323}}, action: 'stream'},
+      {protocol: 'ssl', conditions: {hostname: {compare: 'glob', value: '*.example.com'}}, action: 'stream'},
+      {protocol: 'http',
+        conditions: {path: {compare: 'strict', value: '/myservice'}},
+        action: 'sub',
+        sub: {
+          protocol: 'ws', conditions: {}, action: 'stream'
+        }}
     ]
   ]
 ]
 
+let protocols = [
+  {
+    name: 'tcp',
+    properties: {
+      port: {
+        type: 'number',
+        matcher: 'strict'
+      }
+    },
+    childern: [
+      {
+        name: 'ssl',
+        properties: {
+          hostname: {
+            type: 'string',
+            matcher: 'glob'
+          }
+        }
+      },
+      {
+        name: 'http',
+        properties: {
+          path: {
+            type: 'string',
+            matcher: 'strict'
+          }
+        },
+        sub: {
+          ws: {
+            properties: {}
+          }
+        }
+      }
+    ]
+  }
+]
+
 describe('parser', () => {
   samples.forEach((sample, i) => {
-    it('should parse ' + JSON.stringify(sample[0]) + ' correctly', () => {
-      assert.deepStrictEqual(parser(sample[0]), sample[1])
+    it('should parse sample #' + ++i + ' correctly', () => {
+      assert.deepStrictEqual(parse(sample[0]), sample[1])
+    })
+
+    it('should validate sample #' + i + ' correctly', () => {
+      assert.deepStrictEqual(validate(parse(sample[0]), protocols), sample[1])
     })
   })
 })
