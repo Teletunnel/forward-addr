@@ -23,12 +23,14 @@
   "author": "Maciej Krüger <mkg20001@gmail.com>",
   "license": "MPL-2.0",
   "dependencies": {
-    "aegir": "^15.1.0"
+    "minimatch": "^3.0.4"
   },
   "directories": {
     "test": "test"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "aegir": "^15.1.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PeerTunnel/forward-addr.git"
