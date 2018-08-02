@@ -1,9 +1,9 @@
 'use strict'
 
-const tokenizer = require('./tokenizer')
-const astifier = require('./astifier')
+const lexer = require('./lexer')
+const parser = require('./parser')
 const compiler = require('./compiler')
 
-module.exports = function parser (str) {
-  return compiler(astifier(tokenizer(str)))
+module.exports = function Parser (str) {
+  return compiler(parser(lexer(str)))
 }

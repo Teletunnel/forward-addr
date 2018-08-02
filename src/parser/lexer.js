@@ -43,7 +43,7 @@ goto :token
 
 */
 
-function tokenizer (input) {
+function lexer (input) {
   let current = 0
   let tokens = []
 
@@ -153,4 +153,4 @@ function tokenizer (input) {
   return tokens
 }
 
-module.exports = tokenizer
+module.exports = lexer

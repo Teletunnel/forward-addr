@@ -1,6 +1,6 @@
 'use strict'
 
-function astifier (tokens) {
+function parser (tokens) {
   let current = 0
 
   let cur = () => tokens[current]
