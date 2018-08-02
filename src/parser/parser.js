@@ -32,4 +32,4 @@ function parser (tokens) {
   return out
 }
 
-module.exports = astifier
+module.exports = parser

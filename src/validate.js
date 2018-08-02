@@ -20,6 +20,7 @@ function validate (current, parsed, protocols) {
     }
     const type = types[keyDef.type]
     const cond = cur.conditions[key]
+    cond.type = keyDef.type // so we don't need all the protocol defs for .match
     if (!cond.compare) {
       cond.compare = keyDef.matcher || 'strict'
     } else {
