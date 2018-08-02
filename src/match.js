@@ -17,7 +17,7 @@ module.exports = (parsedAddr, connState) => {
         const cond = cur.conditions[key]
         const compareFnc = types[cond.type][cond.compare]
 
-        if (!compareFnc(connState[i][1], cond.value)) { // can't match, direct comparison failed
+        if (!compareFnc(connState[i][1][key], cond.value)) { // can't match, direct comparison failed
           return 0
         }
       }

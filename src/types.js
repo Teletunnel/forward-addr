@@ -4,7 +4,7 @@ const minimatch = require('minimatch')
 
 function getInt (maybeInt) {
   if (typeof maybeInt === 'number') {
-    if (isNaN(maybeInt)) throw new Error('Int not a number')
+    if (isNaN(maybeInt)) throw new Error('NaN is not a number')
   }
 
   if (typeof maybeInt === 'string') {
