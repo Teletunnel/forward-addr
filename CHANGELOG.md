@@ -1,3 +1,13 @@
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/PeerTunnel/forward-addr/compare/v0.1.0...v0.1.1) (2018-08-02)
+
+
+### Bug Fixes
+
+* Match function ([accbdc5](https://github.com/PeerTunnel/forward-addr/commit/accbdc5))
+
+
+
 <a name="0.1.0"></a>
 # [0.1.0](https://github.com/PeerTunnel/forward-addr/compare/v0.0.2...v0.1.0) (2018-08-02)
 
