@@ -1,6 +1,6 @@
 {
   "name": "forward-addr",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "A multiaddr-inspired address format for recursivly matching protocols and properties",
   "main": "src/index.js",
   "scripts": {
