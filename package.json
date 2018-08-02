@@ -29,7 +29,8 @@
     "test": "test"
   },
   "devDependencies": {
-    "aegir": "^15.1.0"
+    "aegir": "^15.1.0",
+    "teletunnel-protocols": "^0.1.0"
   },
   "repository": {
     "type": "git",

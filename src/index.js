@@ -2,5 +2,5 @@
 
 module.exports = {
   parse: require('./parser'),
-  matcher: require('./matchers')
+  types: require('./types')
 }
