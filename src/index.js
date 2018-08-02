@@ -1,5 +1,6 @@
 'use strict'
 
 module.exports = {
-  parse: require('./parser')
+  parse: require('./parser'),
+  matcher: require('./matchers')
 }
