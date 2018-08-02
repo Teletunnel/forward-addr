@@ -9,7 +9,7 @@ module.exports = [
         matcher: 'strict'
       }
     },
-    childern: [
+    children: [
       {
         name: 'ssl',
         properties: {

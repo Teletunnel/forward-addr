@@ -19,7 +19,7 @@ const samples = [ // TODO: finish matches, protocols
         }}
     ],
     [
-      {protocol: 'tcp', conditions: {port: {compare: 'strict', value: 5323}}, action: 'stream'},
+      {protocol: 'tcp', conditions: {port: {compare: 'strict', value: '5323'}}, action: 'stream'},
       {protocol: 'ssl', conditions: {hostname: {compare: 'glob', value: '*.example.com'}}, action: 'stream'},
       {protocol: 'http',
         conditions: {path: {compare: 'strict', value: '/myservice'}},
@@ -39,8 +39,8 @@ describe('parser', () => {
       assert.deepStrictEqual(parse(sample[0]), sample[1])
     })
 
-    it.skip('should validate sample #' + i + ' correctly', () => {
-      assert.deepStrictEqual(validate(parse(sample[0]), protocols), sample[1])
+    it('should validate sample #' + i + ' correctly', () => {
+      assert.deepStrictEqual(validate(parse(sample[0]), protocols), sample[2])
     })
   })
 })

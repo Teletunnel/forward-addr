@@ -2,8 +2,6 @@
 
 A multiaddr-inspired address format for recursivly matching protocols and properties
 
-> # WIP
-
 ## API
 
 - `.parse(String str)<Object>`
@@ -27,13 +25,13 @@ Returns:
 */
 ```
 
-> Below APIs are not implemented yet
-
 - `.validate(Object parsedAddr, Protocols[] protocols)<Object>`
 
 Validates the multiaddr. Throws if it is using invalid combinations of protocols, etc.
 
 Returns a new complete parsed object where missing `match` fields are filled in and values are properly parsed.
+
+Note that this **mutates** the `parsedAddr` Object
 
 - `.match(Object parsedAddr, Object connState)<Number>`
 

@@ -2,5 +2,6 @@
 
 module.exports = {
   parse: require('./parser'),
-  types: require('./types')
+  types: require('./types'),
+  validate: require('./validate')
 }

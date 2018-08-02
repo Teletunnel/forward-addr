@@ -20,7 +20,13 @@ module.exports = {
   string: {
     strict: (value, compareWith) => value === compareWith,
     regex: (value, compareWith) => {
-      let [regex, flags] = compareWith.split('\\/')
+      let regex = compareWith.split('\\/')
+      let flags = regex.pop()
+      if (!flags.match(/^[gmi]+$/gmi)) { // only use that part if it contains valid regex flags
+        regex.unshift(flags)
+        flags = ''
+      }
+      regex = regex.join('\\/')
       regex = new RegExp(regex, flags)
       return Boolean(regex.exec(value))
     },
