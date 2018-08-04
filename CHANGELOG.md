@@ -1,3 +1,14 @@
+<a name="0.1.2"></a>
+## [0.1.2](https://github.com/PeerTunnel/forward-addr/compare/v0.1.1...v0.1.2) (2018-08-04)
+
+
+### Features
+
+* Add float type ([4ced8a4](https://github.com/PeerTunnel/forward-addr/commit/4ced8a4))
+* Compare value can be custom function ([99af52f](https://github.com/PeerTunnel/forward-addr/commit/99af52f))
+
+
+
 <a name="0.1.1"></a>
 ## [0.1.1](https://github.com/PeerTunnel/forward-addr/compare/v0.1.0...v0.1.1) (2018-08-02)
 
